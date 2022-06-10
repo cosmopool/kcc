@@ -1078,10 +1078,7 @@ def makeBook(source, qtgui=None):
     getComicInfo(os.path.join(path, "OEBPS", "Images"), source)
     detectCorruption(os.path.join(path, "OEBPS", "Images"), source)
     if options.webtoon:
-        if image.ProfileData.Profiles[options.profile][1][1] > 1024:
-            y = 1024
-        else:
-            y = image.ProfileData.Profiles[options.profile][1][1]
+        y = image.ProfileData.Profiles[options.profile][1][1]
         comic2panel.main(['-y ' + str(y), '-i', '-m', path], qtgui)
     print("Processing images...")
     if GUI:
